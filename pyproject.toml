@@ -9,6 +9,7 @@ description = "AI-powered Gmail triage agent using Gemini / Google Antigravity S
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "flask>=3.0.0",
     "google-genai>=1.0.0",
     "google-api-python-client>=2.100.0",
     "google-auth-httplib2>=0.2.0",
@@ -35,3 +36,7 @@ where = ["src"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-v"
+
+[tool.vercel]
+entrypoint = "src.email_triage.web:app"
+
